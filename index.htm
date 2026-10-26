@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Participation Activity 3</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- PyScript -->
+    <link
+        rel="stylesheet"
+        href="https://pyscript.net/releases/2026.7.3/core.css"
+    >
+    <script
+        type="module"
+        src="https://pyscript.net/releases/2026.7.3/core.js"
+    ></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f6fa;
+            color: #243247;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 16px;
+        }
+
+        .search-card {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 32px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+        }
+
+        .icon-box {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e5efff;
+            color: #2457a7;
+            border-radius: 12px;
+            font-size: 25px;
+        }
+
+        .page-title {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #172b4d;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .form-control {
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            border-color: #5084d8;
+            box-shadow: 0 0 0 3px rgba(36, 87, 167, 0.12);
+        }
+
+        .btn-search {
+            width: 100%;
+            padding: 12px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2457a7;
+            color: #ffffff;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-search:hover {
+            background-color: #1b4488;
+            color: #ffffff;
+        }
+
+        #result {
+            margin-top: 24px;
+            padding: 16px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            color: #334155;
+            overflow-wrap: anywhere;
+        }
+
+        .footer {
+            padding: 18px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 576px) {
+            .search-card {
+                padding: 24px 20px;
+            }
+
+            .page-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="search-card">
+
+            <div class="icon-box" aria-hidden="true">
+                &#127757;
+            </div>
+
+            <h1 class="page-title">Country Capital Finder</h1>
+
+            <p class="subtitle">
+                Discover the capital city of any country.
+            </p>
+
+            <form onsubmit="return false;">
+                <label for="input1" class="form-label">
+                    Country Name
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="input1"
+                    placeholder="Enter country (e.g., Philippines)"
+                    autocomplete="country-name"
+                >
+
+                <button
+                    type="button"
+                    class="btn btn-search"
+                    py-click="country_capital"
+                >
+                    Search
+                </button>
+            </form>
+
+            <div id="result" aria-live="polite">
+                <small class="text-secondary d-block mb-1">
+                    SEARCH RESULT
+                </small>
+                <span>Enter a country name to find its capital.</span>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        Participation Activity 3
+    </footer>
+
+    <!-- Your existing Python file -->
+    <py-script src="main.py"></py-script>
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+</body>
+</html>
